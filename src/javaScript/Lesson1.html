@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Заголовок окна </title>
+    <style>
+    /*Для id = main */
+          #main{width:400px;
+          height:400px;
+          border:solid red 4px;
+          }
+    /*Тег з вказаним ім'ям*/
+         body{text-align: center;
+         background-color: rgba (128, 128, 128, 0.8)}
+         .mycl{color: yellow;
+         background-color: #0000ff;}
+         .clsp:hover{background-color:red;}
+         #im1{width: 200px;}
+    /*rgb - фон (3 параметри), rgba - прозрачність фону (4 параметру, 4 параметр відповідає за прозорість) Це коментар
+    стилівої таблиці*/
+    </style>
+    <!--Коментар HTML-->
+
+</head>
+<body>
+<div id = "main">
+    Перша сторінка
+    <h1 class="mycl"> Перший ТЄГ </h1>
+    <p class="mycl"> Абзац </p>
+    <img src="cat.jpg" title="Підказка при наведенні миші" alt="Якщо малюнок не загрузився" id ="im1"
+    onclick="alert('Це малюнок');
+    if(flag==0){this.style.width='50px'; flag = 1;}
+    else {this.style.width=''; flag = 0;}">
+    <A href="t5z1.html"> Це ссилка кудись </A>
+    <br>
+    <A href="JavaScript:alert('Hello!');"> Це JavaScript </A>
+    <form name="from" id="from">
+        <input name="txt" id="txt" type="text" value="Ввести текст">
+        <input type="checkbox">
+        <input type="button" value="Кнопка" onclick="revers();">
+    </form>
+</div>
+</body>
+</html>
+<script>
+    alert("Word");
+    document.getElementById('main').style.backgroundColor= "gold";
+    function revers(){
+    var str= from.txt.value;
+    var newstr='';
+    for(var i=str.length -1; i>=0; i--){
+    newstr +=str[i]
+    }
+    from.txt.value = newstr;
+    if(str.toUpperCase().trim() ==
+    newstr.toUpperCase().trim()){
+    var t = confirm("Це паліндром");
+    console.log(t)
+    }
+    }
+</script>
+<!--Це зовнішній скрипт-->
+<!--Shift + Ctrl + / -->
+<script src="">/*Тут заборонено писати код*/</script>
+<!--F12 відкриття штмл наладчика інтернет сторінки -->

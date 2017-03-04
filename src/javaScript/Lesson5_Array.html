@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="forTable"></div>
+<script>
+    /*// Array
+    var mas1 = []; // пустий масив
+    var mas2 = new Array(); // пустий масив
+    mas1[0]=34;
+    mas1[3]=89;
+    document.write(mas1 + "<br>");
+    mas1.length = 2;
+    document.write(mas1+"<br>");
+    mas1[1]= "two";
+    document.write(mas1 + "<br>");
+
+    // завдання не порожнього масива
+    var mas3 = [23, "45", true, 45, 67, 89];
+    var mas4 = new Array (23, 24, 56, 78, 79, 79);
+    document.write(mas3 + "<br>");
+    document.write(mas4 + "<br>");
+
+    // завдання масива заданної довжени - 23
+    var mas5 = new Array (23);
+    document.write(mas5 + "<br>");
+    document.write(mas5[4] + "<br>");
+    mas5.splice(3,6,12,13,14,15,16,17);
+    document.write(mas5 + "<br>");
+    var mas6 = mas3.slice(1,4);  // извлечь 1,2,3
+    document.write(mas6 + "<br>");
+
+    Array.prototype.newInsert = function(n1, ...r){
+    // this - звернення до того масива, до я кого будуть застосовуваться новий метод
+    // n1 - позиція, куди додавать
+    // r - масив додаваємих значень
+    var mas = this;
+    // зсув - звільнення місця для вставки
+    for(var i = mas.length-1, j = r.length; i>=0; i--){
+    mas[i+j] = mas[i];
+    }
+    for(var i = n1; i<r.length; i++){
+    mas[n1+i] = r[i];
+    }
+    }
+    var mas7 = [1, 2, 3, 4, 5, 6];
+    mas7.newInsert(0,8,8,8);
+    document.write(mas7 + "<br>");*/
+
+
+    // Двумірні масиви
+    var mas8 = [[],[],[],[]]  // Порожній двумірний массив
+    for(i=0; i<mas8.length; i++) {
+      //alert("i="+i);
+      for (j=0; j<4; j++) {
+       //alert("j="+j);
+       mas8[i][j] = i*4+j;
+      }
+}
+var table=document.createElement('table');
+table.border = "1";
+var divTable = document.getElementById('forTable');
+divTable.appendChild(table);
+//table.innerHTML = "<tr><td>123</td><td>alkglsglakgl</td></tr>"
+for(i=0;i<mas8.length;i++){
+table.insertRow()
+  for(j=0; j<mas8[i].length; j++) {
+  var td = table.rows[i].insertCell();
+  td.style.border = "dotted red 2px";
+  td.innerHTML = mas8[i][j];
+  }
+}
+var butrnd = document.createElement('button');
+divTable.appendChild(butrnd);
+butrnd.innerHTML = "Random";
+butrnd.style.color = "white";
+butrnd.style.background = "blue";
+butrnd.onclick = function(){
+for(i=0; i<mas8.length; i++) {
+      for (j=0; j<4; j++) {
+       mas8[i][j] = Math.round((20-10)*Math.random()+10);
+       table.rows[i].cells[j].innerHTMl = mas8[i][j];
+      }
+}
+}
+
+</script>
+
+</body>
+</html>

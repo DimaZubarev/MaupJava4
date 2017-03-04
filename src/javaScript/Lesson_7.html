@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // регулярні вислови
+    // RegExp, String
+    var re1 = /JavaScript/ig;
+    str = "JAVASCRIPT, javascript, JavAScripT";
+    console.log(re1.test(str));
+    mas = str.match(re1);
+    console.log(mas);
+    var re2 = new RegExp("[0-9]{3}","g");
+    var re3 = /\d\d\d/g;
+    // будь яка цифра 0/9
+    var str1 = "ми  з'їли 256 мандаринок з 1000 які ми припасли";
+    console.log(str1.match(re2));
+    console.log(str1.match(re3));
+</script>
+</body>
+</html>

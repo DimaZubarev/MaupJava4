@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="time">Годинник</div>
+</body>
+<script>
+        var d = new Date();
+        document.write(d);
+        var n = d.getMonth();
+        alert(n)
+        switch(n){
+        case 0: str = "січень"; break;
+        case 1: str = "лютий"; break;
+        case 2: str = "березень"; break;
+        case 3: str = "квітень"; break;
+        case 4: str = "травень"; break;
+        case 5: str = "червень"; break;
+        case 6: str = "липень"; break;
+        case 7: str = "серпень"; break;
+        case 8: str = "вересень"; break;
+        case 9: str = "жовтень"; break;
+        case 10: str = "листопад"; break;
+        case 11: str = "грудень"; break;
+        default: str = "невідомий місяць";
+        }
+        document.write("<br>" + str + "<br>");
+
+        for(i = 0, s = " "; i<10; i++){
+        s += "*";
+        if(s == 5); continue;
+        document.write(s + "<br>");
+        }
+        // setTimeout, setInterval
+        // tag - куди виводяться часи
+        function clock(tag){
+        var d = new Date();
+        var h = d.getHours();
+        h = h <10 ? "0" + h: h;
+        var m = d.getMinutes();
+        m = m <10 ? "0" + m: m;
+        var s = d.getSeconds();
+        s = s <10 ? "0" + s: s;
+        tag.innerHTML = h + ":" + m + ":" + s;
+        setTimeout(clock, 1000,tim);
+        }
+        var tim = document.getElementById('time')
+        clock(tim);
+ </script>
+
+</html>
